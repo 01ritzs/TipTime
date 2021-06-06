@@ -9,4 +9,8 @@
     <string name="round_up_tip">Round up tip?</string>
     <string name="calculate">Calculate</string>
     <string name="tip_amount">Tip Amount: %s</string>
+    <string name="primary_color">PRIMARY COLOR</string>
+    <string name="button">BUTTON</string>
+    <string name="secondary_color">SECONDARY COLOR</string>
+    <string name="email_icon">EMAIL</string>
 </resources>
