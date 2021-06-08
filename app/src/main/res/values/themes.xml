@@ -8,6 +8,9 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_light</item>
         <item name="colorSecondaryVariant">@color/blue_dark</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="radioButtonStyle">@style/Widget.TipTime.CompoundButton.RadioButton</item>
+        <item name="switchStyle">@style/Widget.TipTime.CompoundButton.Switch</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>

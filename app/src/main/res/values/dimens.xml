@@ -2,6 +2,7 @@
 <resources>
     <dimen name="constraint_layout_padding">16dp</dimen>
     <dimen name="edWidth">160dp</dimen>
-    <dimen name="tf_margin_small">8dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
     <dimen name="tf_margin_medium">16dp</dimen>
+    <dimen name="min_text_height">48dp</dimen>
 </resources>
