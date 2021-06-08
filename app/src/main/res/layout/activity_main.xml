@@ -7,24 +7,52 @@
     android:padding="@dimen/constraint_layout_padding"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/cost_of_service"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/ivStore"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/tfCostOfService"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="@string/cost_of_service"
-        tools:ignore="LabelFor" />
+        app:layout_constraintTop_toTopOf="@id/tfCostOfService"
+        app:srcCompat="@drawable/ic_store" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfCostOfService"
+        android:layout_width="@dimen/edWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tf_margin_medium"
+        android:hint="@string/cost_of_service"
+        app:layout_constraintLeft_toRightOf="@+id/ivStore"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edCostOfService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/icon_service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/service_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/service_question"
+        app:srcCompat="@drawable/ic_service" />
 
     <TextView
         android:id="@+id/service_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tf_margin_small"
         android:hint="@string/cost_of_service"
-        android:text="@string/how_was_the_service"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cost_of_service" />
+        android:text="@string/service_question"
+        app:layout_constraintStart_toStartOf="@id/tfCostOfService"
+        app:layout_constraintTop_toBottomOf="@id/tfCostOfService" />
 
     <RadioGroup
         android:id="@+id/tipOptions"
@@ -32,7 +60,7 @@
         android:layout_height="wrap_content"
         android:checkedButton="@id/option_twenty_percent"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/service_question"
         app:layout_constraintTop_toBottomOf="@id/service_question">
 
         <RadioButton
@@ -55,13 +83,23 @@
 
     </RadioGroup>
 
-    <Switch
+    <ImageView
+        android:id="@+id/icon_round_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/roundUpSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/roundUpSwitch"
+        app:srcCompat="@drawable/ic_round_up" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/roundUpSwitch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/round_up_tip"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tipOptions"
         app:layout_constraintTop_toBottomOf="@id/tipOptions"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -69,6 +107,7 @@
         android:id="@+id/calculate_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tf_margin_small"
         android:text="@string/calculate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
